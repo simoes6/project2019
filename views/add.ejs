@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <h1>Please Contact Us</h1>
+
+    <div class="grid-container">
+        <form accept-charset="UTF-8" action="/add" method="post">
+            
+         <div class="item">
+            <label for="name">Name</label> 
+            <input name="name" type="text" placeholder="Please enter your name" pattern="[a-zA-Z]+" title="Letters only please." />
+            
+            <label for="comment">Comment</label> 
+            <input name="comment" type="text" placeholder="Please enter your comment" />
+             
+            <label for="email">Email</label> 
+            <input name="email" type="text" placeholder="Please enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please enter an email address." /> 
+             
+            <button class="button">Leave Comment</button>
+         </div>   
+            
+            
+            
+        </form>
+
+
+    </div>    
+    
+    
+</div>
+
+
+
+
+<% include ../partials/footer %>

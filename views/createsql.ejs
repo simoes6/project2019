@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <h1>Create a product with SQL and Node</h1>
+    
+    <div class="grid-container">
+        <form accept-charset="UTF-8" action="/createsql" method="post">
+            
+            <div class="item">
+                <label for="name">Name:</label>
+                <input name="name" type="text" placeholder="Please enter product name" />
+                
+                <label for="price">Price:</label>
+                <input name="price" type="text" placeholder="Please enter product price" /> 
+                
+                <label for="image">Image:</label>
+                <input name="image" type="text" placeholder="Please enter your image name" />  
+                
+                <label for="activity">Activity:</label>
+                <input name="activity" type="text" placeholder="Please enter product activity" />                   
+                
+                <button class="button">Create Product</button>
+            </div>
+            
+            
+            
+        </form>
+        
+        
+    </div>
+    
+    
+</div>
+
+
+
+
+<% include ../partials/footer %>

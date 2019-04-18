@@ -1,0 +1,30 @@
+[
+    
+{
+    "name": "Stentor SR1500 Violin Student, €166",
+    "Comment": "Pay in-store when you collect.",
+    "id": 1,
+    "email": "music.studio@gmail.com",
+    "image": "violino.jpg"
+    
+},
+
+{
+    "name": "Fender FA-125 Dreadnought, Sunburst, €128",
+    "Comment": "Pay in-store when you collect.",
+    "id": 2,
+    "email": "music.studio@gmail.com",
+    "image": "violao.jpg"
+    
+},
+
+{
+    "name": "Harley Benton SC-450Plus LD Vintage Series, €159",
+    "Comment": "Pay in-store when you collect.",
+    "id": 3,
+    "email": "music.studio@gmail.com",
+    "image": "guitarra.jpg"
+    
+}
+
+]
