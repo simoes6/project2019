@@ -1,42 +1,53 @@
 <% include ../partials/header %>
 
-
-
-
-
             <div class="row">
-                <h1>Contacts page</h1>
+              
+                <h1>Destinations Page</h1>
 
             </div>
-            
+     
             
             <div class="row">
-            <h1>Welcome to the products page  <br>
+          
+            <h1>Welcome to our destinations page  <br>
+        
   <div class="grid-container">
-      
-      
+ 
+    
       <% res1.forEach(function(contact) { %>
-      
+         
            <div class="item">     
+       
                 <div class="item">
                    <h1 class="itemtitle">Price: <%= contact.Price %></h1>
                    <h1 class="itemp">Name: <%= contact.Name %> </h1>
                    <img src="/<%= contact.Image %>" class="pimage"></image>
-                 
                     <h1 class="itemp">Activity: <%= contact.Activity %> </h1>
+
+
+<div id="paypal-button" style="width: 100%"></div>
+
 
 <a href="/deletesql/<%= contact.Id %>" class="button">Delete Me!</a>
 <a href="/edit/<%= contact.Id %>" class="button">Edit Me!</a>
+<a href="/show/<%= contact.Id %>" class="button">Show Me!</a><br>
+
+
+
+
+ 
 
 
                     </div>
               </div>
-              
+
+             
               
              <% }); %> 
-              
            
+       
     </div>
+  
   </h1>
 </div>
 
@@ -44,6 +55,37 @@
     $(".pimage").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 </script>
 
- 
+              <script>
+  paypal.Button.render({
+    env: 'sandbox', // Or 'production'
+    // Set up the payment:
+    // 1. Add a payment callback
+    payment: function(data, actions) {
+      // 2. Make a request to your server
+      return actions.request.post('/my-api/create-payment/')
+        .then(function(res) {
+          // 3. Return res.id from the response
+          return res.id;
+        });
+    },
+    // Execute the payment:
+    // 1. Add an onAuthorize callback
+    onAuthorize: function(data, actions) {
+      // 2. Make a request to your server
+      return actions.request.post('/my-api/execute-payment/', {
+        paymentID: data.paymentID,
+        payerID:   data.payerID
+      })
+        .then(function(res) {
+          // 3. Show the buyer a confirmation message.
+        });
+    }
+  }, '#paypal-button');
+</script>
+
+
+
+
+
 
 <% include ../partials/footer %>

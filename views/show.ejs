@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+            <div class="row">
+                <h1>Contacts page</h1>
+
+            </div>
+            
+            
+            <div class="row">
+            <h1>Welcome to the products page  <br>
+  <div class="grid-container">
+      
+      
+      <% res1.forEach(function(contact) { %>
+      
+           <div class="item">     
+                <div class="item">
+                   <h1 class="itemtitle">Id: <%= contact.Id %></h1>
+                   <h1 class="itemp">Name: <%= contact.Name %> </h1>
+                   <img src="/<%= contact.Image %>" class="pimage"></image>
+                 
+                    <h1 class="itemp">Activity: <%= contact.Image %> </h1>
+<a href="/deletesql/<%= contact.Id %>" class="button">Delete Me!</a>
+<a href="/edit/<%= contact.Id %>" class="button">Edit Me!</a>
+<a href="/productssql" class="button">Back!</a>
+
+                    </div>
+              </div>
+              
+              
+             <% }); %> 
+              
+           
+    </div>
+  </h1>
+</div>
+
+
+<% include ../partials/footer %>
